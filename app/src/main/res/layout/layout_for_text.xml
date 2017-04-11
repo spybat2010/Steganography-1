@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/labelCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right|center"
+        android:paddingRight="10dp"
+        android:text="2000"
+        android:maxLength="300"
+        android:textColor="#0f0"
+        android:textSize="18sp"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:maxLength="2000"
+        android:gravity="center"
+        android:hint="Enter text to encrypt"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:textSize="20sp">
+    <requestFocus></requestFocus>
+    </EditText>
+
+    <Button
+        android:id="@+id/textDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Text"/>
+
+
+</LinearLayout>
