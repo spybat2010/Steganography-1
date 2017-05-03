@@ -1,11 +1,8 @@
 package rusk.com.steganography;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.LauncherApps;
 import android.content.pm.PackageManager;
-import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -13,18 +10,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
-import java.security.SecureRandom;
-import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -37,23 +27,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static android.R.attr.data;
-
  //Text To Encrypt
 
 public class MainActivity extends AppCompatActivity {
 
 
-    public static final String UPLOAD_URL = "http://10.10.25.106:5000/";
+    public static final String UPLOAD_URL = "http://192.168.1.35:5000/";
 
 
     private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 01234;
     private static final String TAG = "";
-
-    private ImageView imageViewToEncryptIn;
-
     UserKeyAPI userKeyAPI;
     Service service;
+    private ImageView imageViewToEncryptIn;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override

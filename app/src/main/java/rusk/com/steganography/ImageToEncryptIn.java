@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -58,7 +57,7 @@ public class ImageToEncryptIn extends Fragment {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 //        service = new Retrofit.Builder().baseUrl(UPLOAD_URL +"upload/").client(client).build().create(Service.class);
-        service = new Retrofit.Builder().baseUrl(UPLOAD_URL +"uploads_encryptin/").client(client).build().create(Service.class);
+        service = new Retrofit.Builder().baseUrl(UPLOAD_URL + "uploads_encryptin/").client(client).build().create(Service.class);
 
         Intent intent = new Intent();
         String[] mimeTypes = {"image/bmp", "image/png", "image/jpeg"};

@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -40,11 +39,11 @@ public class TextActivity extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.layout_for_text, container, false);
 
-        Button textDone = (Button) view.findViewById(R.id.textDone);
+        final Button textDone = (Button) view.findViewById(R.id.textDone);
         final EditText editText = (EditText) view.findViewById(R.id.editText);
         final TextView labelCount = (TextView) view.findViewById(R.id.labelCount);
 
@@ -81,8 +80,11 @@ public class TextActivity extends Fragment {
         });
 
         textDone.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                textDone.setEnabled(false);
+                editText.setEnabled(false);
                 HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
                 interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
                 OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
